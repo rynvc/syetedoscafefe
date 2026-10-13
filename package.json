@@ -1,0 +1,12 @@
+{
+  "name": "syete-dos-cafe",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "node scripts/build-netlify.mjs",
+    "check:functions": "node --check netlify/functions/login.mjs"
+  }
+}

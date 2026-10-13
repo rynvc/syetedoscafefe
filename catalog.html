@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Menu - Syete Dos Cafe</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h4 class="text-center">Syete Dos Cafe</h4>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="catalog.html" class="active">Menu</a>
+        <a href="pos.html">POS Checkout</a>
+        <a href="analytics.html">Analytics</a>
+    </div>
+    <div class="main-content">
+        <div class="catalog-heading">
+            <div>
+                <h2>Menu</h2>
+                <p class="text-muted small mb-0" id="catalogProductCount">0 items total</p>
+            </div>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addProductModal">+ Add Menu Item</button>
+        </div>
+        <div class="card catalog-filters">
+            <input id="catalogSearch" class="form-control" type="search" placeholder="Search name or category..." aria-label="Search products">
+            <select id="catalogCategory" class="form-select" aria-label="Filter by category">
+                <option value="">All categories</option>
+                <option>Meals</option>
+                <option>Pasta</option>
+                <option>Snacks</option>
+                <option>Food Add-Ons</option>
+                <option>Coffee</option>
+                <option>Frappe</option>
+                <option>Non Coffee</option>
+                <option>Fruity Soda</option>
+                <option>Drink Add-Ons</option>
+            </select>
+            <span id="catalogResultCount" class="text-muted small">0 results</span>
+        </div>
+        <div class="card catalog-table-wrap">
+            <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                    <thead>
+                        <tr><th>Item Name</th><th>Category</th><th>Price</th><th>Actions</th></tr>
+                    </thead>
+                    <tbody id="catalogTableBody">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="addProductTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <form id="addProductForm" class="modal-content">
+                <div class="modal-header"><h2 class="modal-title fs-6" id="addProductTitle">Add Menu Item</h2><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                <div class="modal-body row g-3">
+                    <div class="col-12"><label class="form-label" for="productName">Item name</label><input id="productName" name="name" class="form-control" required></div>
+                    <div class="col-md-6"><label class="form-label" for="productCategory">Category</label><input id="productCategory" name="category_name" class="form-control" list="categoryOptions" required><datalist id="categoryOptions"><option value="Meals"><option value="Pasta"><option value="Snacks"><option value="Food Add-Ons"><option value="Coffee"><option value="Frappe"><option value="Non Coffee"><option value="Fruity Soda"><option value="Drink Add-Ons"></datalist></div>
+                    <div class="col-md-6"><label class="form-label" for="productPrice">Price (₱)</label><input id="productPrice" name="price" class="form-control" type="number" min="0" step="0.01" required></div>
+                    <div class="col-md-6"><label class="form-label" for="productSupplier">Supplier</label><input id="productSupplier" name="supplier" class="form-control"></div>
+                </div>
+                <div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button><button class="btn btn-primary" type="submit">Save Item</button></div>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase-config.js?v=local-fallback"></script>
+    <script src="js/data.js?v=local-fallback"></script>
+    <script src="js/catalog.js"></script>
+    <script src="js/app-shell.js?v=local-fallback"></script>
+</body>
+</html>

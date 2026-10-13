@@ -1,0 +1,4 @@
+.env
+php/.env
+node_modules/
+dist/
