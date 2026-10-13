@@ -3,6 +3,12 @@
   publish = "dist"
   functions = "netlify/functions"
 
+# The Supabase project URL and publishable/anon key are public browser values
+# (js/supabase-config.js); row-level security protects the data. The
+# service-role key is still scanned and must never be committed.
+[build.environment]
+  SECRETS_SCAN_OMIT_KEYS = "SUPABASE_URL,SUPABASE_ANON_KEY"
+
 [[redirects]]
   from = "/"
   to = "/index.html"
