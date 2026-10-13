@@ -1,5 +1,5 @@
 (() => {
-  const projectUrl = "https://YOUR_PROJECT_REF.supabase.co";
+  const projectUrl = "https://vmvbkbupykoesxxgarrb.supabase.co";
   const anonKey = "sb_publishable_Vboh9e8SrH6Ev8XHrMIkMQ_IhuwtiZr";
   const isLocalHost = ["localhost", "127.0.0.1"].includes(window.location.hostname);
   const isUnconfigured = projectUrl.includes("YOUR_PROJECT") || anonKey.includes("YOUR_SUPABASE");
